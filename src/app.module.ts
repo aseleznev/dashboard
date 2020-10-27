@@ -5,11 +5,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import configuration from './config/configuration';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserModule } from './user/user.module';
-import { DashboardModule } from './dashboard/dashboard.module';
-import { PanelModule } from './panel/panel.module';
 import { WellModule } from './well/well.module';
-import { DdrModule } from './ddr/ddr.module';
-import { ComponentModule } from './component/component.module';
 import { LocationModule } from './location/location.module';
 import { AuthModule } from './auth/auth.module';
 
@@ -37,11 +33,7 @@ import { AuthModule } from './auth/auth.module';
       })
     }),
     UserModule,
-    DashboardModule,
-    PanelModule,
     WellModule,
-    DdrModule,
-    ComponentModule,
     LocationModule,
     AuthModule
   ],

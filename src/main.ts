@@ -14,7 +14,6 @@ async function bootstrap() {
     .setTitle('Boss Dashboard')
     .setDescription('The Boss Dashboard API description')
     .setVersion('1.0')
-    .addBasicAuth({ type: 'http', scheme: 'basic' }, 'local')
     .addBearerAuth({ type: 'http', scheme: 'bearer', bearerFormat: 'JWT' }, 'JWT')
     .build();
   const document = SwaggerModule.createDocument(app, options);

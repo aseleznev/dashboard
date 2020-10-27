@@ -2,7 +2,7 @@ import { Controller, HttpStatus, Post, Request, UseGuards, Body, Response } from
 import { AuthService } from './auth.service';
 import { LocalAuthGuard } from './guards/local-auth.guard';
 import { ApiBearerAuth, ApiBody, ApiOkResponse, ApiTags } from '@nestjs/swagger';
-import { UserDto } from '../user/dto/user.dto';
+import { UserDto } from '../dto/user.dto';
 
 @ApiTags('auth')
 @Controller('auth')
@@ -21,7 +21,7 @@ export class AuthController {
   @ApiBearerAuth('local')
   @UseGuards(LocalAuthGuard)
   @Post('login')
-  @ApiBody({ type: UserDto })
+  @ApiBody({ required: true, type: UserDto })
   @ApiOkResponse({ description: 'result Token' })
   async login(@Request() req) {
     return this.authService.login(req.user);

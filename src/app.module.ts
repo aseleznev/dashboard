@@ -8,12 +8,15 @@ import { UserModule } from './user/user.module';
 import { WellModule } from './well/well.module';
 import { LocationModule } from './location/location.module';
 import { AuthModule } from './auth/auth.module';
+import { RoleModule } from './role/role.module';
+const env = process.env.NODE_ENV;
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      load: [configuration]
+      load: [configuration],
+      envFilePath: !env ? '.env' : `.env.${env}`
     }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
@@ -35,7 +38,8 @@ import { AuthModule } from './auth/auth.module';
     UserModule,
     WellModule,
     LocationModule,
-    AuthModule
+    AuthModule,
+    RoleModule
   ],
   controllers: [AppController],
   providers: [AppService]

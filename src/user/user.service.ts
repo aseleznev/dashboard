@@ -20,7 +20,7 @@ export class UserService {
   }
 
   public async findByName(username: string): Promise<User> {
-    return await this.userRepository.findOne({ username });
+    return await this.userRepository.findOne({ username }, { relations: ['roles'] });
   }
 
   public async register(newUser: UserDto): Promise<User> {

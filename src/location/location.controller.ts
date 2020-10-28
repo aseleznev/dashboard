@@ -4,9 +4,10 @@ import { LocationService } from './location.service';
 import { Location } from './location.entity';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { Roles } from '../auth/decorators/roles.decorator';
+import { RolesGuard } from '../auth/guards/roles.guard';
 
 @ApiBearerAuth('JWT')
-@UseGuards(JwtAuthGuard)
+@UseGuards(JwtAuthGuard, RolesGuard)
 @Roles('readLocation')
 @Controller('location')
 @ApiTags('location')

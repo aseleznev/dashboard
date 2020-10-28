@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common';
 import { UserService } from '../user/user.service';
 import { JwtService } from '@nestjs/jwt';
 import { UserDto } from '../dto/user.dto';
-import { Role } from '../role/role.entity';
 
 @Injectable()
 export class AuthService {
@@ -34,9 +33,5 @@ export class AuthService {
       status = { success: false, message: err };
     }
     return status;
-  }
-
-  matchRoles(roles: String[], userRoles: Role[]): boolean {
-    return userRoles.every(userRole => roles.includes(userRole.name));
   }
 }

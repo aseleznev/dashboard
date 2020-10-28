@@ -19,7 +19,7 @@ export class User {
   password: string;
 
   @OneToMany(
-    type => Role,
+    () => Role,
     role => role.user
   )
   roles: Role[];

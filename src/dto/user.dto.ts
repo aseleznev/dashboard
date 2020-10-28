@@ -1,4 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
+import { RoleDto } from './role.dto';
 
 export class UserDto {
   @ApiProperty()
@@ -6,4 +7,7 @@ export class UserDto {
 
   @ApiProperty()
   readonly password: string;
+
+  @ApiProperty()
+  readonly roles: RoleDto[];
 }

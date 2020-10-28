@@ -1,40 +1,40 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity()
+@Entity({ name: 'Location' })
 export class Location {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn({ name: 'LocationID' })
   id: number;
 
-  @Column({ type: 'varchar' })
+  @Column({ name: 'Manager', type: 'varchar' })
   manager: string;
 
-  @Column({ type: 'varchar' })
+  @Column({ name: 'ManagerPost', type: 'varchar' })
   managerPost: string;
 
-  @Column({ type: 'varchar' })
+  @Column({ name: 'Location', type: 'varchar' })
   location: string;
 
-  @Column({ type: 'text' })
+  @Column({ name: 'Note', type: 'text' })
   note: string;
 
-  @Column({ type: 'date' })
+  @Column({ name: 'PeriodStart', type: 'date' })
   periodStart: string;
 
-  @Column({ type: 'date' })
+  @Column({ name: 'PeriodEnd', type: 'date' })
   periodEnd: string;
 
-  @Column({ type: 'varchar' })
+  @Column({ name: 'Vice', type: 'varchar' })
   vice: string;
 
-  @Column({ type: 'varchar' })
+  @Column({ name: 'VicePost', type: 'varchar' })
   vicePost: string;
 
-  @Column({ type: 'varchar' })
+  @Column({ name: 'WorkPlan', type: 'varchar' })
   workPlan: string;
 
-  @Column({ type: 'timestamp' })
+  @Column({ name: 'Created', type: 'timestamp' })
   created: string;
 
-  @Column({ type: 'varchar' })
+  @Column({ name: 'CreatedBy', type: 'varchar' })
   createdBy: string;
 }

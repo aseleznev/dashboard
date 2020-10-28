@@ -5,36 +5,36 @@ export class Location {
   @PrimaryGeneratedColumn({ name: 'LocationID' })
   id: number;
 
-  @Column({ name: 'Manager', type: 'varchar' })
+  @Column({ name: 'Manager', type: 'nvarchar', nullable: true })
   manager: string;
 
-  @Column({ name: 'ManagerPost', type: 'varchar' })
+  @Column({ name: 'ManagerPost', type: 'nvarchar', nullable: true })
   managerPost: string;
 
-  @Column({ name: 'Location', type: 'varchar' })
+  @Column({ name: 'Location', type: 'nvarchar', nullable: true })
   location: string;
 
-  @Column({ name: 'Note', type: 'text' })
+  @Column({ name: 'Note', type: 'nvarchar', nullable: true })
   note: string;
 
-  @Column({ name: 'PeriodStart', type: 'date' })
+  @Column({ name: 'PeriodStart', type: 'date', nullable: true })
   periodStart: string;
 
-  @Column({ name: 'PeriodEnd', type: 'date' })
+  @Column({ name: 'PeriodEnd', type: 'date', nullable: true })
   periodEnd: string;
 
-  @Column({ name: 'Vice', type: 'varchar' })
+  @Column({ name: 'Vice', type: 'nvarchar', nullable: true })
   vice: string;
 
-  @Column({ name: 'VicePost', type: 'varchar' })
+  @Column({ name: 'VicePost', type: 'nvarchar', nullable: true })
   vicePost: string;
 
-  @Column({ name: 'WorkPlan', type: 'varchar' })
+  @Column({ name: 'WorkPlan', type: 'nvarchar', nullable: true })
   workPlan: string;
 
-  @Column({ name: 'Created', type: 'timestamp' })
+  @Column({ name: 'Created', type: 'datetime', nullable: true })
   created: string;
 
-  @Column({ name: 'CreatedBy', type: 'varchar' })
+  @Column({ name: 'CreatedBy', type: 'nvarchar', nullable: true })
   createdBy: string;
 }

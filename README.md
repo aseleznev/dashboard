@@ -12,12 +12,12 @@ $ npm install
 ## Configuration
 
 ```dotenv
-PORT=3001
+PORT=3000
 DATABASE_HOST=localhost
 DATABASE_NAME=dbname
-DATABASE_USER=username
-DATABASE_PASSWORD=password
-DATABASE_PORT=5432
+DATABASE_USER=SA
+DATABASE_PASSWORD=passw0rd
+DATABASE_PORT=1433
 ```
 
 ## Running the app

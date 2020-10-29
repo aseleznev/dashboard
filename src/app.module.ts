@@ -22,8 +22,7 @@ const env = process.env.NODE_ENV;
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: async (configService: ConfigService) => ({
-        type: 'postgres',
-        schema: 'public',
+        type: 'mssql',
         host: configService.get('database.host'),
         port: configService.get<number>('database.port'),
         username: configService.get('database.username'),
